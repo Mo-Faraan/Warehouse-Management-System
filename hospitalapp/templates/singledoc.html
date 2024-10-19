@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sngle singledoc</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'hospitalapp/css/style6.css' %}" rel="stylesheet">
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Category</th>
+                <th>S.phno</th>
+                <th>S.email</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <form method="post" action="{% url 'updatedoctor' singledoc.pk %}">
+                        {% csrf_token %}
+                        <td><input type="text" id="name" name="name" value="{{ singledoc.name }}"></td>
+                        <td><input type="text" id="address" name="address" value="{{ singledoc.address }}"></td>
+                        <td><input type="text" id="field" name="field" value="{{ singledoc.field }}"></td>
+                        <td><input type="text" id="phno" name="phno" value="{{ singledoc.phno }}"></td>
+                        <td><input type="text" id="email" name="email" value="{{ singledoc.email }}"></td>
+                        <td><input type="submit" class="submit-btn" value="Update"></td>
+                    </form>
+                </tr>
+                <a href="{% url 'lisdoc' %}">
+                    <button>Back</button></a>
+        </tbody>
+</body>
+</html>

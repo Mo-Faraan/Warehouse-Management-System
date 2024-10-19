@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single pat</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'hospitalapp/css/style7.css' %}" rel="stylesheet">
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Supplier Name</th>
+                <th>Supplier Address</th>
+                <th>S.phno</th>
+                <th>S.email</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <form method="post" action="{% url 'updatepatient' singlepat.pk %}">
+                        {% csrf_token %}
+                        <td><input type="text" id="name" name="name" value="{{ singlepat.name }}"></td>
+                        <td><input type="text" id="address" name="address" value="{{ singlepat.address }}"></td>
+                        <td><input type="text" id="phno" name="phno" value="{{ singlepat.phno }}"></td>
+                        <td><input type="text" id="email" name="email" value="{{ singlepat.email }}"></td>
+                        <td><input type="submit" class="submit-btn" value="Update"></td>
+                    </form>
+                </tr>
+                <a href="{% url 'lispat' %}">
+                    <button>Back</button></a>
+        </tbody>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'hospitalapp/css/style2.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>New Item Registration</h1>
+    <div class="container">
+        <form method="post" action="{% url 'docsave' %}">
+            {% csrf_token %}
+            <label for="name">Item Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <br>
+            <label for="address">Item Location:</label>
+            <input type="text" id="address" name="address" required><br>
+            <br>
+            <label for="field">Item Category:</label>
+            <input type="text" id="field" name="field" required><br>
+            <br>
+            <label for="phno">Supplier ph no:</label>
+            <input type="number" id="phno" name="phno" required><br>
+            <br>
+            <label for="email">Supplier Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <br><!-- 
+            <label for="username">Doctor username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <br>
+            <label for="password">Doctor password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <br> -->
+            <input type="submit" class="submit-btn" value="Register">
+        </form>
+    </div>
+</html>

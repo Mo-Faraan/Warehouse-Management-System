@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient list</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'hospitalapp/css/style5.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>List of all Suppliers</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Supplier Name</th>
+                <th>Supplier Address</th>
+                <th>S.phno</th>
+                <th>S.email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in allpatients %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.address }}</td>
+                    <td>{{ patient.phno }}</td>
+                    <td>{{ patient.email }}</td>
+                    <td>
+                        <form method="post" action="{% url 'deletepatient' patient.pk %}">
+                            {% csrf_token %}
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="{% url 'singlepat' patient.pk %}">
+                            <button>View</button></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{% url 'admin' %}">
+        <button>Back</button></a>
+</body>
+</html>

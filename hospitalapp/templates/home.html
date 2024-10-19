@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'hospitalapp/css/style8.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to Warehouse Management app</h1>
+    <div class="container">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="submit" class="submit-btn" value="Login">
+        </form>
+    </div>
+</body>
+</html>

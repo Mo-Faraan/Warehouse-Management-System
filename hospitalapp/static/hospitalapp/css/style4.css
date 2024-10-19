@@ -1,0 +1,71 @@
+/* Custom styles for List of all Items page */
+
+body {
+    background-color: #c3ebfa; /* Light background */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px;
+    color: #343a40; /* Dark text */
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff; /* White background for table */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #1fb9c7; /* Border color */
+}
+
+th {
+    background-color: #1fb9c7; /* Header background */
+    color: #ffffff;
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+    color: #343a40;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #1fb9c7; /* Primary button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0086b3; /* Darker blue on hover */
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    margin: 5px;
+}
+
+a button:hover {
+    background-color: #0086b3; /* Darker blue on hover */
+}
+
+.back-button {
+    display: block;
+    text-align: center;
+    margin: 20px;
+}

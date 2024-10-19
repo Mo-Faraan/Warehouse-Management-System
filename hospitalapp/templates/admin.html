@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'hospitalapp/css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>Admin page</h1>
+    <div class="container">
+        <form method="post" action="{% url 'regdoc' %}">
+            {% csrf_token %}
+            <input type="submit" class="submit-btn" value="Register Item">
+        </form>
+        <br>
+        <form method="post" action="{% url 'regpat' %}">
+            {% csrf_token %}
+            <input type="submit" class="submit-btn" value="Register Supplier">
+        </form>
+    </div>
+    <br>
+    <div class="container">
+        <form method="post" action="{% url 'lisdoc' %}">
+            {% csrf_token %}
+            <input type="submit" class="submit-btn" value="List all Items">
+        </form>
+        <br>
+        <form method="post" action="{% url 'lispat' %}">
+            {% csrf_token %}
+            <input type="submit" class="submit-btn" value="List all Suppliers">
+        </form>
+    </div>
+</body>
+</html>
